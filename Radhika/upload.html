@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>SE Project</title>
+        <style type="text/css">
+            #blah{
+                visibility: hidden;
+            }
+        </style>
+        <script src="jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function($){
+                $("#image").change(function(){
+                    readURL(this);
+                });
+
+            });
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result).css({"visibility":"visible", "height": "200px",
+                            "width": "200px"});
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        </script>
+    </head>
+    <body>
+
+    <form action="image-upload.php" method="post" enctype="multipart/form-data">
+        <img id="blah" src="#" alt="your image" /><br>
+        <input type='file' name="fileToUpload" id="image"/><br><br><br>
+        <input type="submit" value="Upload Image" name="submit">
+    </form>
+
+    </body>
+</html>

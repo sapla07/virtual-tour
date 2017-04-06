@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html{
+font-family: "Snell Roundhand",cursive;
+}
+
+input[type = "submit"], #button{
+background-color: #47BB5E;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+
+input[type = "submit"]:hover, #button:hover{
+	box-shadow: 2px 2px 2px grey;
+	}
+.modal
+{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content
+{
+	background-color: white;
+	margin: auto;
+	padding: 0px 0px 20px 20px;
+	border: 1px solid grey;
+	border-radius: 10px;
+	width: 20%;
+}
+
+</style>
+</head>
+
+<body>
+<button id="myBtn">Report</button>
+<div id="myModal" class="modal">
+	<div class="modal-content">
+	  <span class="close">&times;</span>
+	  <h3 style="color:#F48A12">Report</h3>
+	  <form id="form" onsubmit="return validate(this)">
+		<input type="checkbox" name="category">Sexual content<br>
+		<input type="checkbox" name="category">Violent or repulsive content<br>
+		<input type="checkbox" name="category">Hateful or abusive content<br>
+		<input type="checkbox" name="category">Harmful dangerous acts<br>
+		<input type="checkbox" name="category">Child abuse<br>
+		<input type="checkbox" name="category">Infringes my rights<br>
+		<input type="checkbox" name="category">Spam or misleading<br><br>
+		<input type="submit" value="Report">
+	  </form>
+	</div>
+</div>
+
+<script type="text/javascript">
+var modal = document.getElementById('myModal');
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+function validate(form){
+	if((form.category[0].checked == false) && (form.category[1].checked == false) && (form.category[2].checked == false) && (form.category[3].checked == false) 
+	&& (form.category[4].checked == false) && (form.category[5].checked == false) && (form.category[6].checked == false))
+	{
+	alert("Please select atleast one category.");
+	return false;
+	}
+	return true;
+	}
+	
+</script>
+</body>
+</html>
+<script type="text/javascript">
+var modal = document.getElementById('myModal');
+
+var btn = document.getElementById("myBtn");
+
+
+
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+function validate(form){
+	if((form.category[0].checked == false) && (form.category[1].checked == false) && (form.category[2].checked == false) && (form.category[3].checked == false) 
+	&& (form.category[4].checked == false) && (form.category[5].checked == false) && (form.category[6].checked == false))
+	{
+	alert("Please select atleast one category.");
+	return false;
+	}
+	 return true;
+	}
+	
+</script>
+</body>
+</html>
